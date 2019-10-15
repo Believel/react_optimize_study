@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.list {
+  border: 1px solid #d9dddd;
+}
+.listItemEven,
+.listItemOdd {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.listItemEven {
+  background-color: #f8f8f0;
+}
