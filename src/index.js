@@ -1,23 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import './index.css'
-// 长列表优化
-import { FixedSizeList as List} from './react-window';
+// 允许你将组件渲染成静态标记。通常，它被使用在Node服务端上
+import ReactDOMServer from 'react-dom/server';
+// ReactDOMServer.renderToString(element) 将React 元素渲染为初始HTML
+// ReactDOMServer.renderToStaticMarkup(element) 与renderToString相似，但此方法不会在React内部创建额外的DOM属性，例如data-react-root
+class App extends Component {
+  render() {
+    return '12345'
+  }
+}
 
-const Row = ({ index, style}) => (
-  <div style={style} className={index % 2 ? 'listItemOdd' : 'listItemEven'}>
-    Row {index}
-  </div>
-)
-const App = () => (
-  <List 
-    className='list'
-    height={150}
-    itemCount={1000}
-    itemSize={35}
-    width={300}
-  >
-    {Row}
-  </List>
-)
-ReactDOM.render(<App/>, document.getElementById("root"))
+ReactDOM.render(<App/>, document.getElementById('root'))
